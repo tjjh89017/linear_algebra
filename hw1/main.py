@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os
 import sys
 from fractions import Fraction
 
@@ -9,7 +10,7 @@ def print_matrix(matrix, ostream = sys.stdout):
 	for i in matrix:
 		for j in i:
 			ostream.write("%s " % (str(j)))
-		ostream.write('\n')
+		ostream.write(os.linesep)
 
 def elimination(matrix, offset, m, n):
 
