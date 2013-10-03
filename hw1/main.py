@@ -33,8 +33,8 @@ def elimination(matrix, offset, m, n):
 		matrix[offset][i] /= matrix[offset][leader]
 
 	"""sub other"""
-	for i in range(offset + 1, m):
-		for j in range(n - 1, leader - 1, - 1):
+	for j in range(n - 1, leader - 1, - 1):
+		for i in range(offset + 1, m):
 			matrix[i][j] -= matrix[i][leader] * matrix[offset][j]
 
 	""" recursive it lol """
@@ -56,8 +56,8 @@ def reduce(matrix, offset, m, n):
 			break
 
 	""" sub other """
-	for i in range(0, row):
-		for j in range(n - 1, leader - 1, -1):
+	for j in range(n - 1, leader - 1, -1):
+		for i in range(0, row):
 			matrix[i][j] -= matrix[i][leader] * matrix[row][j]
 
 	""" recursive it lol """
