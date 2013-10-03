@@ -19,8 +19,8 @@ def elimination(matrix, offset, m, n):
 
 	"""find leader"""
 	leader = n
-	for j in range(offset, n):
-		for i in range(offset, m):
+	for j in xrange(offset, n):
+		for i in xrange(offset, m):
 			if matrix[i][j] != 0:
 				matrix[offset], matrix[i] = matrix[i], matrix[offset]
 				break
@@ -29,11 +29,11 @@ def elimination(matrix, offset, m, n):
 			break;
 	
 	"""div leader """
-	for i in range(n - 1, leader - 1, -1):
+	for i in xrange(n - 1, leader - 1, -1):
 		matrix[offset][i] /= matrix[offset][leader]
 
 	"""sub other"""
-	for j in range(n - 1, leader - 1, - 1):
+	for j in xrange(n - 1, leader - 1, - 1):
 		for i in range(offset + 1, m):
 			matrix[i][j] -= matrix[i][leader] * matrix[offset][j]
 
@@ -50,13 +50,13 @@ def reduce(matrix, offset, m, n):
 	row = m - offset - 1
 	"""find leader"""
 	leader = n
-	for i in range(0, n):
+	for i in xrange(0, n):
 		if matrix[row][i] != 0:
 			leader = i
 			break
 
 	""" sub other """
-	for j in range(n - 1, leader - 1, -1):
+	for j in xrange(n - 1, leader - 1, -1):
 		for i in range(0, row):
 			matrix[i][j] -= matrix[i][leader] * matrix[row][j]
 
