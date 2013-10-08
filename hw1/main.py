@@ -75,7 +75,7 @@ if __name__ == '__main__':
 	m, n = (int(i) for i in file.next().split())
 
 	matrix = []
-	for i in range(0, m):
+	for i in xrange(0, m):
 		matrix.append([Fraction(j) for j in file.next().split()])
 	file.close()
 
