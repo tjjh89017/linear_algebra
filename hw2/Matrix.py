@@ -43,9 +43,11 @@ unit test
 
 if __name__ == '__main__':
 
-	a = Matrix([[1, 2], [3, 4]])
-	b = Matrix([[1, 0], [0, 1]])
+	a = Matrix([[0, -1], [1, 0]])
+	b = Matrix([[1, 2], [3, 4]])
 
+	print a.matrix
+	print b.matrix
 	print (a + b).matrix
 	print (a - b).matrix
 	print (a * b).matrix
